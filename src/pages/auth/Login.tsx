@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
+import logoImage from "@/assets/logo.png";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -49,14 +50,21 @@ export default function Login() {
       >
         <Card className="glass border-border/50 shadow-large">
           <CardHeader className="text-center space-y-4">
-            <motion.div
+            {/* <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
               className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-primary shadow-glow"
-            >
-              <Zap className="h-8 w-8 text-white" />
-            </motion.div>
+            > */}
+            <div className="flex items-center justify-center gap-2">
+              <img
+                src={logoImage}
+                alt="Elevate360 Digital"
+                className="h-12 w-auto object-contain"
+              />
+              {/* <span className="font-bold text-lg">Elevate360</span> */}
+            </div>
+
             <div>
               <CardTitle className="text-2xl font-bold text-foreground">
                 Welcome Back
