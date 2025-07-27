@@ -85,7 +85,7 @@ export default function Login() {
                     <Input
                       id="email"
                       type="email"
-                      placeholder="admin@digitalflow.com"
+                      placeholder="admin@360digital.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="pl-10 h-12 shadow-soft"
