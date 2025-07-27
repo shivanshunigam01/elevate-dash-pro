@@ -1,27 +1,33 @@
-import { useState } from "react"
-import { Eye, EyeOff, Mail, Lock, Zap } from "lucide-react"
-import { motion } from "framer-motion"
+import { useState } from "react";
+import { Eye, EyeOff, Mail, Lock, Zap } from "lucide-react";
+import { motion } from "framer-motion";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Checkbox } from "@/components/ui/checkbox"
-import { ThemeToggle } from "@/components/layout/theme-toggle"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 export default function Login() {
-  const [showPassword, setShowPassword] = useState(false)
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [remember, setRemember] = useState(false)
+  const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [remember, setRemember] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // TODO: Implement login logic
-    console.log({ email, password, remember })
+    console.log({ email, password, remember });
     // For demo, redirect to admin dashboard
-    window.location.href = "/admin"
-  }
+    window.location.href = "/admin";
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background/80 to-primary/5 p-4">
@@ -52,11 +58,11 @@ export default function Login() {
               <Zap className="h-8 w-8 text-white" />
             </motion.div>
             <div>
-              <CardTitle className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+              <CardTitle className="text-2xl font-bold text-foreground">
                 Welcome Back
               </CardTitle>
               <CardDescription className="text-muted-foreground">
-                Sign in to your DigitalFlow admin dashboard
+                Sign in to your 360Digital admin dashboard
               </CardDescription>
             </div>
           </CardHeader>
@@ -115,7 +121,9 @@ export default function Login() {
                   <Checkbox
                     id="remember"
                     checked={remember}
-                    onCheckedChange={(checked) => setRemember(checked as boolean)}
+                    onCheckedChange={(checked) =>
+                      setRemember(checked as boolean)
+                    }
                   />
                   <Label htmlFor="remember" className="text-sm">
                     Remember me
@@ -146,5 +154,5 @@ export default function Login() {
         </Card>
       </motion.div>
     </div>
-  )
+  );
 }
